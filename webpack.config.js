@@ -10,12 +10,11 @@ function shim(regExp) {
 const pkg = require("./package.json");
 
 module.exports = {
-  devtool: "source-map",
+  mode: 'development',
   entry: "./src/index.js",
   output: {
     filename: "index.js",
     path: path.resolve(__dirname, "lib"),
-    publicPath: "https://unpkg.com/thebelab@" + pkg.version + "/lib/",
   },
   plugins: [
     // Not using moment
@@ -42,17 +41,9 @@ module.exports = {
     shim(/@jupyterlab\/codeeditor\/lib\/jsoneditor/),
     shim(/@jupyterlab\/coreutils\/lib\/(time|settingregistry|.*menu.*)/),
     shim(/@jupyterlab\/services\/lib\/(session|contents|terminal)\/.*/),
-    new UglifyJSPlugin({
-      cache: true,
-      parallel: true,
-      sourceMap: true,
-    }),
-    new Visualizer({
-      filename: "../webpack.stats.html",
-    }),
   ],
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.js$/,
         loader: "babel-loader",
@@ -73,7 +64,6 @@ module.exports = {
         },
       },
       { test: /\.css$/, loader: "style-loader!css-loader" },
-      { test: /\.json$/, loader: "json-loader" },
       { test: /\.html$/, loader: "file-loader" },
       // jquery-ui loads some images
       { test: /\.(jpg|png|gif)$/, loader: "file-loader" },

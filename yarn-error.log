@@ -1,0 +1,95 @@
+Arguments: 
+  /Users/danieladelberg/.nvm/versions/node/v8.11.3/bin/node /usr/local/Cellar/yarn/1.7.0/libexec/bin/yarn.js init
+
+PATH: 
+  /Users/danieladelberg/.rbenv/shims:/Users/danieladelberg/.rbenv/shims:/Users/danieladelberg/.nvm/versions/node/v8.11.3/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/Visual Studio Code.app/Contents/Resources/app/bin:/Applications:/Users/danieladelberg/development/citrine/eish:/usr/local/opt/postgresql@9.5/bin:/usr/local/opt/node@8/bin:/Users/danieladelberg/.rbenv/shims
+
+Yarn version: 
+  1.7.0
+
+Node version: 
+  8.11.3
+
+Platform: 
+  darwin x64
+
+Trace: 
+  Error: canceled
+      at Interface.<anonymous> (/usr/local/Cellar/yarn/1.7.0/libexec/lib/cli.js:131036:13)
+      at emitNone (events.js:106:13)
+      at Interface.emit (events.js:208:7)
+      at Interface._ttyWrite (readline.js:774:16)
+      at ReadStream.onkeypress (readline.js:158:10)
+      at emitTwo (events.js:126:13)
+      at ReadStream.emit (events.js:214:7)
+      at emitKeys (internal/readline.js:420:14)
+      at emitKeys.next (<anonymous>)
+      at ReadStream.onData (readline.js:1010:36)
+
+npm manifest: 
+  {
+    "name": "thebelab",
+    "version": "0.2.1",
+    "description": "A version of Thebe built on JupyterLab",
+    "main": "lib/index.js",
+    "scripts": {
+      "build": "webpack --display-chunks",
+      "build:json": "webpack --profile --json > webpack.stats.json",
+      "build:watch": "webpack --progress --colors --watch",
+      "prepare": "npm dedupe && npm run build",
+      "fmt": "prettier --trailing-comma=es5 --write *.js src/*.js example/*.js",
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "files": [
+      "lib/**",
+      "src/*"
+    ],
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/minrk/thebelab.git"
+    },
+    "keywords": [
+      "jupyter",
+      "notebook"
+    ],
+    "author": "Min RK",
+    "license": "BSD-3-Clause",
+    "bugs": {
+      "url": "https://github.com/minrk/thebelab/issues"
+    },
+    "engines": {
+      "node": ">=4",
+      "npm": ">=4"
+    },
+    "homepage": "https://github.com/minrk/thebelab#readme",
+    "devDependencies": {
+      "@jupyterlab/codemirror": "^0.16.2",
+      "@jupyterlab/mathjax2-extension": "^0.4.2",
+      "@jupyterlab/outputarea": "^0.16.2",
+      "@jupyterlab/services": "^2.0.2",
+      "@jupyterlab/theme-light-extension": "^0.16.2",
+      "@jupyter-widgets/base": "^1.1.10",
+      "@jupyter-widgets/controls": "^1.2.1",
+      "@jupyter-widgets/html-manager": "^0.13.0",
+      "@jupyter-widgets/output": "^1.0.17",
+      "babel-core": "^6.26.0",
+      "babel-loader": "^7.1.2",
+      "babel-preset-env": "^1.6.1",
+      "codemirror": "~5.35.0",
+      "css-loader": "^0.28.7",
+      "file-loader": "^1.1.5",
+      "jquery": "^3.1.1",
+      "prettier": "^1.7.4",
+      "style-loader": "^0.21.0",
+      "uglifyjs-webpack-plugin": "^1.0.1",
+      "url-loader": "^1.0.0",
+      "webpack": "^3.8.1",
+      "webpack-visualizer-plugin": "^0.1.11"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

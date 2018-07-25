@@ -184,6 +184,10 @@ function renderCell(element, options) {
     }
     kernelPromise.then(kernel => {
       outputArea.future = kernel.requestExecute({ code: code });
+      window.outputArea = outputArea;
+      outputArea.future.done.then((res) => {
+        debugger
+      });
     });
     return false;
   }
